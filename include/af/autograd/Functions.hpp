@@ -41,6 +41,10 @@ namespace af {
         Variable max(const Variable &lhs, const double &rhs);
         Variable max(const double &lhs, const Variable &rhs);
       
+        Variable min(const Variable &lhs, const Variable &rhs);
+        Variable min(const Variable &lhs, const double &rhs);
+        Variable min(const double &lhs, const Variable &rhs);
+      
         Variable transpose(const Variable &input);
         Variable expandAs(const Variable &input, const Variable &reference);
         Variable reduceAs(const Variable &input, const Variable &reference);
