@@ -32,5 +32,12 @@ namespace af {
             w.eval();
             return parameter(w);
         }
+
+        Variable weight(int d0, int d1, int d2, int d3, float spread)
+        {
+            auto w = af::randu(d0, d1, d2, d3) * spread - spread / 2;
+            w.eval();
+            return parameter(w);
+        }
     }
 }
