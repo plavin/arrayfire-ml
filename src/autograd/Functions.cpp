@@ -414,5 +414,14 @@ namespace af {
             };
             return Variable(result, {input}, grad_func);
         }
+
+        Variable lookup(const Variable &input, const Variable &idx, const int dim)
+        {
+            auto result = af::lookup(input.array(), idx.array(), dim);
+            auto grad_func = [dim](std::vector<Variable> &inputs, const Variable &grad_output) {
+                inputs[0].addGrad(lookup(grad_output, inputs[1], dim));
+            };
+            return Variable(result, {input, idx}, grad_func);
+        }
     }
 }

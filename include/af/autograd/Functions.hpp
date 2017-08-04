@@ -79,5 +79,7 @@ namespace af {
 
         Variable flat(const Variable &input);
         Variable moddims(const Variable &input, const dim4 &dims);
+
+        Variable lookup(const array &in, const array &idx, const int dim=-1);
     }
 }
